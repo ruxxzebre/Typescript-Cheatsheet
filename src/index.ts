@@ -72,7 +72,7 @@ const ExampleSite: Frontend = {
 
 // We can specify type of argument in functions or methods by 
 // typing interface, class, enum, or just specification that object should match with
-// Now you can be sure that passed object will always has necessary fields
+// Now you can be sure that passed object will always have necessary fields
 
 // Without interfaces we can strict object's props like this
 function calcAge(user: { name: string, birthday: number }): number {
@@ -109,13 +109,14 @@ interface Segment {
   endingPoint: Point;
 }
 
-// So here we violated cohesion principle, the function below is highly related to Vector
+// So here we violated cohesion principle, the function below is highly related to Segment
 // so why won't we use them together?
 let manhattanDistance = (segment: Segment): number => {
   return Math.abs(segment.startingPoint.x - segment.endingPoint.x) 
         - Math.abs(segment.startingPoint.y - segment.endingPoint.y);
 }
 
+// Vector boi
 interface Vector {
   characteristics: number[];
   calcVector(startingPoint: Point, endingPoint: Point): number[];
